@@ -63,14 +63,14 @@ cc_library(
             ],
         ),
         "//conditions:default": [
-            "include/x86_64-linux-gnu/NvUtils.h",
+            "include/NvUtils.h",
         ] + glob(
             [
-                "include/x86_64-linux-gnu/NvInfer*.h",
+                "include/NvInfer*.h",
             ],
             exclude = [
-                "include/x86_64-linux-gnu/NvInferPlugin.h",
-                "include/x86_64-linux-gnu/NvInferPluginUtils.h",
+                "include/NvInferPlugin.h",
+                "include/NvInferPluginUtils.h",
             ],
         ),
     }),
@@ -78,7 +78,7 @@ cc_library(
         ":aarch64_linux": ["include/aarch64-linux-gnu"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     visibility = ["//visibility:private"],
 )
@@ -89,7 +89,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libnvinfer_static.a",
         ":ci_rhel_x86_64_linux": "lib64/libnvinfer_static.a",
         ":windows": "lib/nvinfer.lib",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvinfer_static.a",
+        "//conditions:default": "lib/libnvinfer_static.a",
     }),
     visibility = ["//visibility:private"],
 )
@@ -100,7 +100,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libnvinfer.so",
         ":ci_rhel_x86_64_linux": "lib64/libnvinfer.so",
         ":windows": "lib/nvinfer.dll",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvinfer.so",
+        "//conditions:default": "lib/libnvinfer.so",
     }),
     visibility = ["//visibility:private"],
 )
@@ -127,7 +127,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libnvparsers.so",
         ":ci_rhel_x86_64_linux": "lib64/libnvparsers.so",
         ":windows": "lib/nvparsers.dll",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvparsers.so",
+        "//conditions:default": "lib/libnvparsers.so",
     }),
     visibility = ["//visibility:private"],
 )
@@ -157,18 +157,18 @@ cc_library(
             "include/NvUffParser.h",
         ],
         "//conditions:default": [
-            "include/x86_64-linux-gnu/NvCaffeParser.h",
-            "include/x86_64-linux-gnu/NvOnnxParser.h",
-            "include/x86_64-linux-gnu/NvOnnxParserRuntime.h",
-            "include/x86_64-linux-gnu/NvOnnxConfig.h",
-            "include/x86_64-linux-gnu/NvUffParser.h",
+            "include/NvCaffeParser.h",
+            "include/NvOnnxParser.h",
+            "include/NvOnnxParserRuntime.h",
+            "include/NvOnnxConfig.h",
+            "include/NvUffParser.h",
         ],
     }),
     includes = select({
         ":aarch64_linux": ["include/aarch64-linux-gnu"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     visibility = ["//visibility:private"],
 )
@@ -191,7 +191,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libnvonnxparser.so",
         ":ci_rhel_x86_64_linux": "lib64/libnvonnxparser.so",
         ":windows": "lib/nvonnxparser.dll",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvonnxparser.so",
+        "//conditions:default": "lib/libnvonnxparser.so",
     }),
     visibility = ["//visibility:private"],
 )
@@ -215,16 +215,16 @@ cc_library(
             "include/NvOnnxConfig.h",
         ],
         "//conditions:default": [
-            "include/x86_64-linux-gnu/NvOnnxParser.h",
-            "include/x86_64-linux-gnu/NvOnnxParserRuntime.h",
-            "include/x86_64-linux-gnu/NvOnnxConfig.h",
+            "include/NvOnnxParser.h",
+            "include/NvOnnxParserRuntime.h",
+            "include/NvOnnxConfig.h",
         ],
     }),
     includes = select({
         ":aarch64_linux": ["include/aarch64-linux-gnu"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     visibility = ["//visibility:private"],
 )
@@ -247,7 +247,7 @@ cc_import(
         ":aarch64_linux": "lib/x86_64-linux-gnu/libnvonnxparser_runtime.so",
         ":ci_rhel_x86_64_linux": "lib64/libnvonnxparser_runtime.so",
         ":windows": "lib/nvonnxparser_runtime.dll",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvonnxparser_runtime.so",
+        "//conditions:default": "lib/libnvonnxparser_runtime.so",
     }),
     visibility = ["//visibility:public"],
 )
@@ -265,14 +265,14 @@ cc_library(
             "include/NvOnnxParserRuntime.h",
         ],
         "//conditions:default": [
-            "include/x86_64-linux-gnu/NvOnnxParserRuntime.h",
+            "include/NvOnnxParserRuntime.h",
         ],
     }),
     includes = select({
         ":aarch64_linux": ["include/aarch64-linux-gnu"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     visibility = ["//visibility:private"],
 )
@@ -295,7 +295,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libnvcaffe_parsers.so",
         ":ci_rhel_x86_64_linux": "lib64/libnvcaffe_parsers.so",
         ":windows": "lib/nvcaffe_parsers.dll",
-        "//conditions:default": "lib/x86_64-linux-gnu/libnvcaffe_parsers.so",
+        "//conditions:default": "lib/libnvcaffe_parsers.so",
     }),
     visibility = ["//visibility:private"],
 )
@@ -313,14 +313,14 @@ cc_library(
             "include/NvCaffeParser.h",
         ],
         "//conditions:default": [
-            "include/x86_64-linux-gnu/NvCaffeParser.h",
+            "include/NvCaffeParser.h",
         ],
     }),
     includes = select({
         ":aarch64_linux": ["include/aarch64-linux-gnu"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     visibility = ["//visibility:private"],
 )
@@ -343,13 +343,13 @@ cc_library(
         ":aarch64_linux": ["lib/aarch64-linux-gnu/libnvinfer_plugin.so"],
         ":ci_rhel_x86_64_linux": ["lib64/libnvinfer_plugin.so"],
         ":windows": ["lib/nvinfer_plugin.dll"],
-        "//conditions:default": ["lib/x86_64-linux-gnu/libnvinfer_plugin.so"],
+        "//conditions:default": ["lib/libnvinfer_plugin.so"],
     }),
     hdrs = select({
         ":aarch64_linux": glob(["include/aarch64-linux-gnu/NvInferPlugin*.h"]),
         ":ci_rhel_x86_64_linux": glob(["include/NvInferPlugin*.h"]),
         ":windows": glob(["include/NvInferPlugin*.h"]),
-        "//conditions:default": glob(["include/x86_64-linux-gnu/NvInferPlugin*.h"]),
+        "//conditions:default": glob(["include/NvInferPlugin*.h"]),
     }),
     copts = [
         "-pthread",
@@ -358,7 +358,7 @@ cc_library(
         ":aarch64_linux": ["include/aarch64-linux-gnu/"],
         ":ci_rhel_x86_64_linux": ["include/"],
         ":windows": ["include/"],
-        "//conditions:default": ["include/x86_64-linux-gnu/"],
+        "//conditions:default": ["include/"],
     }),
     linkopts = [
         "-lpthread",

@@ -41,7 +41,7 @@ cc_import(
         ":aarch64_linux": "lib/aarch64-linux-gnu/libcudnn.so",
         ":ci_rhel_x86_64_linux": "lib64/libcudnn.so",
         ":windows": "bin/cudnn64_7.dll",  #Need to configure specific version for windows
-        "//conditions:default": "lib/x86_64-linux-gnu/libcudnn.so",
+        "//conditions:default": "lib64/libcudnn.so",
     }),
     visibility = ["//visibility:private"],
 )
